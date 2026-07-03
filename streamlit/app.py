@@ -49,6 +49,7 @@ try:
             SELECT
                 j.title,
                 c.name,
+                s.name as source,
                 j.location,
                 j.job_url,
                 j.description
@@ -68,6 +69,7 @@ try:
         columns=[
             "Title",
             "Company",
+            "Source",
             "Location",
             "URL",
             "Description"
