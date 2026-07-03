@@ -1,0 +1,16 @@
+TARGET_KEYWORDS = [
+    "data analyst",
+    "bi analyst",
+    "business analyst",
+    "analytics",
+    "sql",
+    "postgres",
+    "postgresql",
+    "python",
+    "support engineer",
+    "technical support engineer",
+    "platform support engineer",
+    "application support engineer",
+    "power bi",
+    "looker",
+]
