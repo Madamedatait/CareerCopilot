@@ -145,10 +145,15 @@ try:
     )
 
     st.data_editor(
-        df,
-        use_container_width=True,
-        disabled=True
-    )
+    df,
+    use_container_width=True,
+    disabled=True,
+    column_config={
+        "URL": st.column_config.LinkColumn(
+            "URL"
+        )
+    }
+)
 
 except Exception as e:
 
