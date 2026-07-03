@@ -50,7 +50,8 @@ try:
                 j.title,
                 c.name,
                 j.location,
-                j.job_url
+                j.job_url,
+                j.description
             FROM jobs j
             LEFT JOIN companies c
                 ON c.id = j.company_id
@@ -68,7 +69,8 @@ try:
             "Title",
             "Company",
             "Location",
-            "URL"
+            "URL",
+            "Description"
         ]
     )
 
@@ -76,7 +78,14 @@ try:
     # Score
     # -----------------------------------
 
-    df["Score"] = df["Title"].apply(calculate_score)
+    df["Score"] = df.apply(
+    lambda row: calculate_score(
+        row["Title"],
+        row["Description"],
+        row["Location"]
+    ),
+    axis=1
+)
 
     df = df.sort_values(
         by="Score",

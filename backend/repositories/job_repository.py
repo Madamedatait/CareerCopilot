@@ -9,6 +9,7 @@ def create_job(
     title,
     location,
     job_url,
+    description,
 ):
 
     with engine.connect() as conn:
@@ -32,14 +33,16 @@ def create_job(
                     source_id,
                     title,
                     location,
-                    job_url
+                    job_url,
+                    description
                 )
                 VALUES (
                     :company_id,
                     :source_id,
                     :title,
                     :location,
-                    :job_url
+                    :job_url,
+                    :description
                 )
                 RETURNING id
             """),
@@ -49,6 +52,7 @@ def create_job(
                 "title": title,
                 "location": location,
                 "job_url": job_url,
+                "description": description,
             }
         )
 
