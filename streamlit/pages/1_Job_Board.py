@@ -16,6 +16,10 @@ sys.path.append(str(ROOT_DIR))
 from backend.services.job_scorer import calculate_score
 from backend.services.job_tags import build_tags
 
+from backend.config.career_paths import (
+    CAREER_PATHS
+)
+
 # -----------------------------------
 # Configuration
 # -----------------------------------
@@ -115,6 +119,39 @@ try:
     )
 
     df = df[df["Source"].isin(sources)]
+
+    career_paths = st.multiselect(
+        "🎯 Career Path",
+        options=list(
+            CAREER_PATHS.keys()
+        ),
+        default=[
+            "Support",
+            "Data"
+        ]
+    )
+
+    if career_paths:
+
+        mask = False
+
+        search_text = (
+            df["Title"].fillna("")
+            + " "
+            + df["Description"].fillna("")
+        )
+
+    for path in career_paths:
+
+        for keyword in CAREER_PATHS[path]:
+
+            mask = mask | search_text.str.contains(
+                keyword,
+                case=False,
+                na=False
+            )
+
+        df = df[mask]
 
     # -----------------------------------
     # Remote Filter

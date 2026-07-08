@@ -7,6 +7,7 @@ def is_relevant_job(job):
 
     tags = " ".join(job.get("tags", [])).lower()
 
+
     searchable_text = f"{position} {tags}"
 
     return any(

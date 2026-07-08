@@ -51,8 +51,8 @@ def main():
             "description": job.get("content", "")
         }
 
-        if not is_relevant_job(normalized_job):
-            continue
+        #if not is_relevant_job(normalized_job):
+        #    continue
 
         relevant += 1
 

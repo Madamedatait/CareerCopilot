@@ -29,8 +29,8 @@ def main():
 
     for job in jobs[1:]:
 
-        if not is_relevant_job(job):
-            continue
+        #if not is_relevant_job(job):
+        #    continue
 
         company_name = job.get("company")
 
@@ -44,8 +44,10 @@ def main():
             source_id=source_id,
             title=job.get("position", ""),
             location=job.get("location", ""),
-            job_url=job.get("url", "")
+            job_url=job.get("url", ""),
+            description=job.get("description", "")
         )
+
 
         inserted += 1
 
