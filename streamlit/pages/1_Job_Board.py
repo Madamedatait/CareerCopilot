@@ -334,7 +334,7 @@ try:
 
     st.data_editor(
         display_df,
-        use_container_width=True,
+        width="stretch",
         disabled=True,
         column_config={
             "URL": st.column_config.LinkColumn(

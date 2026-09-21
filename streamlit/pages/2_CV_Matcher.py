@@ -341,7 +341,7 @@ if uploaded_file:
                 "URL"
             ]
         ],
-        use_container_width=True,
+        width="stretch",
         disabled=True,
         column_config={
             "URL": st.column_config.LinkColumn(
