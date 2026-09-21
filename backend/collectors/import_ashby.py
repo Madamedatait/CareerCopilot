@@ -1,6 +1,5 @@
 import requests
 
-from backend.services.job_filter import is_relevant_job
 from backend.repositories.company_repository import get_or_create_company
 from backend.repositories.job_repository import create_job
 from backend.repositories.source_repository import get_source_id
