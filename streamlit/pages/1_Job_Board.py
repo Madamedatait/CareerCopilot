@@ -10,7 +10,7 @@ import sys
 # Import backend
 # -----------------------------------
 
-ROOT_DIR = Path(__file__).parent.parent
+ROOT_DIR = Path(__file__).parent.parent.parent
 sys.path.append(str(ROOT_DIR))
 
 from backend.services.job_scorer import calculate_score
