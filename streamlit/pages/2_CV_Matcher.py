@@ -248,7 +248,7 @@ if uploaded_file:
                     na=False
                 )
 
-    jobs_df = jobs_df[mask]
+        jobs_df = jobs_df[mask]
 
     french_only = st.checkbox(
         "🇫🇷 French"

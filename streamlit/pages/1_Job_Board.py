@@ -133,23 +133,23 @@ try:
 
     if career_paths:
 
-        mask = False
-
         search_text = (
             df["Title"].fillna("")
             + " "
             + df["Description"].fillna("")
         )
 
-    for path in career_paths:
+        mask = False
 
-        for keyword in CAREER_PATHS[path]:
+        for path in career_paths:
 
-            mask = mask | search_text.str.contains(
-                keyword,
-                case=False,
-                na=False
-            )
+             for keyword in CAREER_PATHS[path]:
+
+                 mask = mask | search_text.str.contains(
+                    keyword,
+                    case=False,
+                    na=False
+                )
 
         df = df[mask]
 
